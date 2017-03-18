@@ -18,6 +18,22 @@ Usergroup Field works on Craft 2.4.x and Craft 2.5.x.
 
 Add usergroup selection to entries, categories or assets for special features ex: Prevent some entries to be shown for specific users.
 
+## Templating
+
+To verify if a usergroup is selected within the field:
+
+```twig
+{% set _show = false %}
+{% for group in currentUser.groups %}
+  {% if group.id in myentry.myusergroupfield %}
+    {% set _show = true %}
+  {% endif %}
+{% endfor %}
+
+{% if _show %}
+    {# do something with myentry... #}
+{% endif %}
+```
 
 
 ## Usergroup Field Roadmap
