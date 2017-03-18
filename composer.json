@@ -1,0 +1,14 @@
+{
+	"name": "quebecstudio/usergroupfield",
+	"description": "Usergroups selection as checkboxes",
+	"type": "craft-plugin",
+	"authors": [
+		{
+			"name": "Québec Studio",
+			"homepage": "http://quebecstudio.com"
+		}
+	],
+	"require": {
+		"composer/installers": "~1.0"
+	}
+}
