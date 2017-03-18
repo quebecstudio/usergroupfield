@@ -38,7 +38,7 @@ To verify if a usergroup is selected within the field:
 
 ## Usergroup Field Roadmap
 
-* Add settings to show all groups or only specific groups to be shown in the field.
+* Add settings to show all groups or only specific groups in the field.
 
 Plugin development by [Québec Studio](http://quebecstudio.com)
 
