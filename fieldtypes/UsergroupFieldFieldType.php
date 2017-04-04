@@ -4,7 +4,6 @@
  *
  * Usergroup FieldType
  *
- *
  * @author    Québec Studio
  * @copyright Copyright (c) 2017 Québec Studio
  * @link      http://quebecstudio.com
@@ -19,7 +18,7 @@ class UsergroupFieldFieldType extends BaseFieldType
 
     public function getName()
     {
-        return Craft::t('Group');
+        return Craft::t('Usergroup');
     }
 
     public function defineContentAttribute()
@@ -30,11 +29,7 @@ class UsergroupFieldFieldType extends BaseFieldType
     public function getInputHtml($name, $values)
     {
         if (!$values)
-            $values = new UsergroupFieldModel();
-
-        $id = craft()->templates->formatInputId($name);
-        $namespacedId = craft()->templates->namespaceInputId($id);
-
+          $values = null;
 
          $options = array();
          $usergroups = craft()->userGroups->allGroups;
@@ -44,21 +39,9 @@ class UsergroupFieldFieldType extends BaseFieldType
          }
 
       		return craft()->templates->render('_includes/forms/checkboxGroup', array(
-            'namespaceId' => $namespacedId,
+            'name' => $name,
       			'options' => $options,
       			'values'  => $values
       		));
-
-
-    }
-
-    public function prepValueFromPost($value)
-    {
-        return $value;
-    }
-
-    public function prepValue($value)
-    {
-        return $value;
     }
 }
