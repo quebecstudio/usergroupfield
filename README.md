@@ -23,14 +23,7 @@ Add usergroup selection to entries, categories or assets for special features ex
 To verify if a usergroup is selected within the field:
 
 ```twig
-{% set _show = false %}
-{% for group in currentUser.groups %}
-  {% if group.id in myentry.myusergroupfield %}
-    {% set _show = true %}
-  {% endif %}
-{% endfor %}
-
-{% if _show %}
+{% if currentUser.groups|intersect(myentry.myusergroupfield) %}
     {# do something with myentry... #}
 {% endif %}
 ```
